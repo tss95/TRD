@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trd-paper"
+version = "0.1.0"
+description = "Temporal Reversal Discrimination for event representations"
+requires-python = ">=3.11"
+dependencies = [
+    "torch==2.10.0",
+    "numpy==1.26.4",
+    "scipy==1.15.2",
+    "PyYAML==6.0.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff", "black"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["LICENSE", "UPSTREAM.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["unit: synthetic tests with no research dataset access"]
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+skip-magic-trailing-comma = true
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["src/trd/hosts/ts2vec/vendor", "src/trd/hosts/patchtst/vendor"]

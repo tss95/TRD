@@ -1,0 +1,80 @@
+dataset: circor
+host: ts2vec
+seed: 42
+channels: 1
+classes: 4
+data:
+  stride_samples: 16000
+  strong_noise_std: 0.0
+  target_rate_hz: 50
+  weak_noise_std: 0.0
+  window_samples: 16000
+encoder:
+  output_dims: 320
+  hidden_dims: 64
+  depth: 10
+  mask_mode: binomial
+  lambda_: 0.5
+  temporal_unit: 0
+  tau_temp: 0.0
+  temporal_hierarchy: true
+optimizer:
+  optimizer_type: adamw
+  batch_size: 2
+  betas:
+  - 0.9
+  - 0.999
+  max_lr: 0.001
+  min_lr: 0.001
+  weight_decay: 0.01
+  max_grad_norm: 50.0
+  gate_betas:
+  - 0.9
+  - 0.95
+  gate_clip_norm: 100.0
+  gate_lr_mult: 1.0
+  gate_weight_decay: 0.0
+  foreach: null
+  fused: null
+training:
+  updates: 200000
+  schedule_steps: 200000
+  schedule_tick_steps: 1000
+  checkpoint_steps:
+  - 0
+  - 25000
+  - 50000
+  - 100000
+  - 200000
+  workers: 0
+  precision: float32
+  tf32: true
+trd:
+  weight: 1.5
+  span_samples: 3200
+  fade_samples: 40
+probe:
+  batch_size: 64
+  embedding_batch_size: 8
+  epochs: 120
+  event_classes:
+  - 0
+  - 2
+  event_tolerances_seconds:
+  - 0.05
+  - 0.1
+  head_seed: 31415
+  heads:
+  - linear
+  - temporal
+  label_proportions:
+  - 0.01
+  - 0.05
+  label_seed: 1729
+  learning_rate: 0.001
+  temporal_hidden_dim: 64
+  temporal_kernel_size: 5
+  weight_decay: 0.0001
+  label_minutes_per_group: []
+  label_block_seconds: 60
+  scoring_protocol: interval

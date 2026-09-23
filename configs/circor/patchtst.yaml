@@ -1,0 +1,94 @@
+dataset: circor
+host: patchtst
+seed: 42
+channels: 1
+classes: 4
+data:
+  stride_samples: 16000
+  strong_noise_std: 0.0
+  target_rate_hz: 50
+  weak_noise_std: 0.0
+  window_samples: 16000
+encoder:
+  channel_fusion: concat
+  context_length: 16000
+  d_ff: 512
+  d_model: 128
+  dropout: 0.2
+  fixed_peak_lr: 0.0002
+  fuse_trd_views: true
+  head_dropout: 0.2
+  mask_ratio: 0.4
+  n_heads: 16
+  n_layers: 3
+  normalization: train_standard_revin
+  objective: masked_reconstruction_trd
+  patch_length: 80
+  pct_start: 0.3
+  probe_input_layout: BTC
+  recipe: sensitivity
+  revin_eps: 1.0e-05
+  source_revision: 204c21efe0b39603ad6e2ca640ef5896646ab1a9
+  stride: 80
+  tile_batch_size: 16
+  tile_step: 8000
+optimizer:
+  optimizer_type: adam
+  batch_size: 64
+  betas:
+  - 0.9
+  - 0.999
+  max_lr: 0.0002
+  min_lr: 0.0
+  weight_decay: 0.0
+  max_grad_norm: 1000000000.0
+  gate_betas:
+  - 0.9
+  - 0.95
+  gate_clip_norm: 100.0
+  gate_lr_mult: 1.0
+  gate_weight_decay: 0.0
+  foreach: false
+  fused: false
+training:
+  updates: 200000
+  schedule_steps: 200000
+  schedule_tick_steps: 1000
+  checkpoint_steps:
+  - 0
+  - 25000
+  - 50000
+  - 100000
+  - 200000
+  workers: 0
+  precision: float32
+  tf32: true
+trd:
+  weight: 1.5
+  span_samples: 3200
+  fade_samples: 40
+probe:
+  batch_size: 64
+  embedding_batch_size: 8
+  epochs: 120
+  event_classes:
+  - 0
+  - 2
+  event_tolerances_seconds:
+  - 0.05
+  - 0.1
+  head_seed: 31415
+  heads:
+  - linear
+  - temporal
+  label_proportions:
+  - 0.01
+  - 0.05
+  label_seed: 1729
+  learning_rate: 0.001
+  temporal_hidden_dim: 64
+  temporal_kernel_size: 5
+  weight_decay: 0.0001
+  label_minutes_per_group: []
+  label_block_seconds: 60
+  scoring_protocol: interval

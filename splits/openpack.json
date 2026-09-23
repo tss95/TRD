@@ -1,0 +1,421 @@
+{
+  "dataset": "openpack",
+  "records": {
+    "U0101-S0100": {
+      "group_id": "U0101",
+      "split": "train"
+    },
+    "U0101-S0200": {
+      "group_id": "U0101",
+      "split": "train"
+    },
+    "U0101-S0300": {
+      "group_id": "U0101",
+      "split": "train"
+    },
+    "U0101-S0400": {
+      "group_id": "U0101",
+      "split": "train"
+    },
+    "U0101-S0500": {
+      "group_id": "U0101",
+      "split": "train"
+    },
+    "U0102-S0100": {
+      "group_id": "U0102",
+      "split": "test"
+    },
+    "U0102-S0200": {
+      "group_id": "U0102",
+      "split": "test"
+    },
+    "U0102-S0300": {
+      "group_id": "U0102",
+      "split": "test"
+    },
+    "U0102-S0400": {
+      "group_id": "U0102",
+      "split": "test"
+    },
+    "U0102-S0500": {
+      "group_id": "U0102",
+      "split": "test"
+    },
+    "U0103-S0100": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0103-S0200": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0103-S0300": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0103-S0400": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0103-S0500": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0104-S0100": {
+      "group_id": "U0104",
+      "split": "val"
+    },
+    "U0104-S0200": {
+      "group_id": "U0104",
+      "split": "val"
+    },
+    "U0104-S0300": {
+      "group_id": "U0104",
+      "split": "val"
+    },
+    "U0104-S0400": {
+      "group_id": "U0104",
+      "split": "val"
+    },
+    "U0105-S0100": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0105-S0200": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0105-S0300": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0105-S0400": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0105-S0500": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0106-S0100": {
+      "group_id": "U0106",
+      "split": "val"
+    },
+    "U0106-S0200": {
+      "group_id": "U0106",
+      "split": "val"
+    },
+    "U0106-S0300": {
+      "group_id": "U0106",
+      "split": "val"
+    },
+    "U0106-S0400": {
+      "group_id": "U0106",
+      "split": "val"
+    },
+    "U0106-S0500": {
+      "group_id": "U0106",
+      "split": "val"
+    },
+    "U0107-S0100": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0107-S0200": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0107-S0300": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0107-S0400": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0107-S0500": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0108-S0100": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0108-S0200": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0108-S0300": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0108-S0400": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0108-S0500": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0109-S0100": {
+      "group_id": "U0109",
+      "split": "train"
+    },
+    "U0109-S0200": {
+      "group_id": "U0109",
+      "split": "train"
+    },
+    "U0109-S0300": {
+      "group_id": "U0109",
+      "split": "train"
+    },
+    "U0109-S0400": {
+      "group_id": "U0109",
+      "split": "train"
+    },
+    "U0109-S0500": {
+      "group_id": "U0109",
+      "split": "train"
+    },
+    "U0110-S0100": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0110-S0200": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0110-S0300": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0110-S0400": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0110-S0500": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0111-S0100": {
+      "group_id": "U0111",
+      "split": "train"
+    },
+    "U0111-S0200": {
+      "group_id": "U0111",
+      "split": "train"
+    },
+    "U0111-S0300": {
+      "group_id": "U0111",
+      "split": "train"
+    },
+    "U0111-S0400": {
+      "group_id": "U0111",
+      "split": "train"
+    },
+    "U0111-S0500": {
+      "group_id": "U0111",
+      "split": "train"
+    },
+    "U0201-S0100": {
+      "group_id": "U0201",
+      "split": "val"
+    },
+    "U0201-S0200": {
+      "group_id": "U0201",
+      "split": "val"
+    },
+    "U0201-S0300": {
+      "group_id": "U0201",
+      "split": "val"
+    },
+    "U0201-S0400": {
+      "group_id": "U0201",
+      "split": "val"
+    },
+    "U0201-S0500": {
+      "group_id": "U0201",
+      "split": "val"
+    },
+    "U0202-S0100": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0202-S0200": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0202-S0300": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0202-S0400": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0202-S0500": {
+      "group_id": "U0105",
+      "split": "train"
+    },
+    "U0203-S0100": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0203-S0200": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0203-S0300": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0203-S0400": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0203-S0500": {
+      "group_id": "U0108",
+      "split": "train"
+    },
+    "U0204-S0100": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0204-S0200": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0204-S0300": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0204-S0400": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0204-S0500": {
+      "group_id": "U0110",
+      "split": "test"
+    },
+    "U0205-S0100": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0205-S0200": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0205-S0300": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0205-S0400": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0205-S0500": {
+      "group_id": "U0107",
+      "split": "train"
+    },
+    "U0206-S0100": {
+      "group_id": "U0206",
+      "split": "test"
+    },
+    "U0206-S0200": {
+      "group_id": "U0206",
+      "split": "test"
+    },
+    "U0206-S0300": {
+      "group_id": "U0206",
+      "split": "test"
+    },
+    "U0206-S0400": {
+      "group_id": "U0206",
+      "split": "test"
+    },
+    "U0206-S0500": {
+      "group_id": "U0206",
+      "split": "test"
+    },
+    "U0207-S0100": {
+      "group_id": "U0207",
+      "split": "train"
+    },
+    "U0207-S0200": {
+      "group_id": "U0207",
+      "split": "train"
+    },
+    "U0207-S0300": {
+      "group_id": "U0207",
+      "split": "train"
+    },
+    "U0207-S0400": {
+      "group_id": "U0207",
+      "split": "train"
+    },
+    "U0207-S0500": {
+      "group_id": "U0207",
+      "split": "train"
+    },
+    "U0208-S0100": {
+      "group_id": "U0208",
+      "split": "train"
+    },
+    "U0208-S0200": {
+      "group_id": "U0208",
+      "split": "train"
+    },
+    "U0208-S0300": {
+      "group_id": "U0208",
+      "split": "train"
+    },
+    "U0208-S0400": {
+      "group_id": "U0208",
+      "split": "train"
+    },
+    "U0208-S0500": {
+      "group_id": "U0208",
+      "split": "train"
+    },
+    "U0209-S0100": {
+      "group_id": "U0209",
+      "split": "train"
+    },
+    "U0209-S0200": {
+      "group_id": "U0209",
+      "split": "train"
+    },
+    "U0209-S0300": {
+      "group_id": "U0209",
+      "split": "train"
+    },
+    "U0209-S0400": {
+      "group_id": "U0209",
+      "split": "train"
+    },
+    "U0209-S0500": {
+      "group_id": "U0209",
+      "split": "train"
+    },
+    "U0210-S0100": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0210-S0200": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0210-S0300": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0210-S0400": {
+      "group_id": "U0103",
+      "split": "train"
+    },
+    "U0210-S0500": {
+      "group_id": "U0103",
+      "split": "train"
+    }
+  }
+}

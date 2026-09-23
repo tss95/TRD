@@ -1,0 +1,215 @@
+dataset: openpack
+host: pmt
+seed: 42
+channels: 3
+classes: 10
+data:
+  stride_samples: 1800
+  strong_noise_std: 0.03
+  target_rate_hz: 30
+  weak_noise_std: 0.01
+  window_samples: 1800
+encoder:
+  d_model: 320
+  nhead: 8
+  num_encoder_blocks: 3
+  transformer_neighborhood_size: 30
+  transformer_activation: gelu
+  transformer_hidden_dim_factor: 4
+  transformer_dropout1: 0.1
+  transformer_dropout2: 0.2
+  transformer_apply_terminal_norm: true
+  tokenizer_num_kernels: 256
+  tokenizer_patch_size: 15
+  tokenizer_stride: 6
+  tokenizer_dropout1: 0.1
+  tokenizer_dropout2: 0.2
+  tokenizer_activation: gelu
+  input_block_activation: gelu
+  input_block_norm_type: batchnorm
+  input_block_n_conv_layers: 1
+  input_block_use_conv: true
+  input_block_apply_pe: false
+  use_weight_sharing: true
+  use_cls_token_for_classification: false
+  use_mean_token_for_classification: false
+  num_proj_layers: 2
+  proj_hidden_dim: 512
+  proj_output_dim: 320
+  proj_activation: gelu
+  proj_dropout: 0.1
+  neighborhood_pos_encoding_mode: additive_sincos
+  neighborhood_rope_base: null
+  pma:
+    shared:
+      activation: gelu
+      after_cnn_encoder: true
+      after_neighborhood_encoder: false
+      aggregator_use_conv_q: false
+      allow_state_to_attend_prev_state: true
+      apply_terminal_norm: true
+      bidirectional: false
+      collapse_gate_type: dimwise
+      compile: false
+      cross_block_all_states: true
+      cross_block_alpha: 0.5
+      cross_block_state: true
+      drop_block_norm: false
+      dropout1: 0.1
+      dropout2: 0.15
+      dropout_mode: legacy
+      experiment_mode: pmt
+      fuse_trd_views: true
+      fuse_two_view_pma: true
+      gate_activation_temperature: 1.0
+      gate_type: scalar
+      gate_use_residual: true
+      layers: 1
+      learnable_gamma: true
+      masking: causal
+      mix_kind: scalar
+      mlp_pre_norm: false
+      n_states: 4
+      norm_position: pre
+      norm_type: rms
+      num_blocks: 3
+      num_heads: null
+      overlap_mode: attn
+      reduce_norms: false
+      residual_init: 0.5
+      rope_base: 10000.0
+      share_dir_weights: false
+      skip_gate_init_logit: -0.5
+      skip_gate_kind: scalar
+      skip_gate_temperature: 1.0
+      skip_gate_warm_epochs: 0
+      state_init_noise_std: 0.01
+      stream_chunk_len: null
+      use_final_token_for_classification: false
+      use_horizontal_state_passing: true
+      use_rope: true
+      use_streaming_agg: false
+      window_checkpointing: true
+      window_size: 60
+      window_stride: 30
+    v5_4:
+      compile_mode: default
+      compile_per_window: true
+      shift_pattern: alternate
+      state_read_enabled: true
+      state_read_init_logit: -2.0
+      state_read_kind: scalar
+      state_read_temperature: 1.0
+      state_update_gate_enabled: true
+      state_update_gate_init_logit: -2.0
+      state_update_gate_kind: scalar
+      state_update_gate_temperature: 2.0
+    offsets:
+      chunk_offset_scale: 0.5
+      local_offset_scale: 0.1
+      max_chunks: 10000
+      use_chunk_offset: true
+    rope_chunk_offset_on_states: false
+  num_predictor_blocks: 1
+optimizer:
+  optimizer_type: adam
+  batch_size: 32
+  betas:
+  - 0.9
+  - 0.999
+  max_lr: 0.0002
+  min_lr: 2.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 50.0
+  gate_betas:
+  - 0.9
+  - 0.95
+  gate_clip_norm: 100.0
+  gate_lr_mult: 1.0
+  gate_weight_decay: 0.0
+  foreach: null
+  fused: null
+training:
+  updates: 200000
+  schedule_steps: 200000
+  schedule_tick_steps: 1000
+  checkpoint_steps:
+  - 0
+  - 25000
+  - 50000
+  - 100000
+  - 200000
+  workers: 0
+  precision: float32
+  tf32: true
+  temperature_schedule_epochs: 160
+  advance_epoch_schedules: false
+trd:
+  weight: 1.5
+  span_samples: 480
+  fade_samples: 6
+probe:
+  batch_size: 64
+  embedding_batch_size: 8
+  epochs: 120
+  event_classes: []
+  event_tolerances_seconds: []
+  head_seed: 31415
+  heads:
+  - linear
+  - temporal
+  label_block_seconds: 30
+  label_minutes_per_group:
+  - 1.0
+  - 5.0
+  label_proportions: []
+  label_seed: 1729
+  learning_rate: 0.001
+  scoring_protocol: openpack_1hz
+  temporal_hidden_dim: 64
+  temporal_kernel_size: 5
+  weight_decay: 0.0001
+native:
+  icl_weight: 0.5
+  pcl_weight: 0.25
+  contrast:
+    pma_contrastive_loss:
+      bidirectional_weight: 1.0
+      chunk_size: 1024
+      enable_small_batch_combined_pool: false
+      enable_temp_schedule: true
+      end_temperature: 0.7
+      exclude_local_sample: true
+      full_denom_key_tile_size: 4096
+      lambda_warmup_fraction: 0.0
+      max_chunk_halves: 4
+      n_negative_samples: 512
+      negative_sampling_mode: random
+      negatives_per_source: 2
+      pcl_blocks: last
+      pcl_last_n_blocks: 1
+      projector_build_rng_parity: false
+      restrict_negatives_to_state_slot: false
+      site_reduction: sum
+      temp_schedule_mode: fraction
+      temperature: 0.9
+      use_compact_backward_stats: true
+      use_compact_probs_no_cat: false
+      use_dedicated_projector: true
+      use_only_final_pma_state: false
+      use_pcl_projector: true
+      use_per_head_states_for_pcl: false
+      use_per_state_loss: true
+      use_per_state_projector: true
+      use_streamed_full_denom: false
+      weight: 1.0
+    cls_contrastive_loss:
+      enable_temp_schedule: true
+      end_temperature: 0.5
+      memory_bank_size: 1024
+      schedule_epochs: 0
+      temp_schedule_mode: fraction
+      temperature: 0.6
+      use_all_gather: true
+      use_memory_bank: false
+  state_predictor_enabled: false
